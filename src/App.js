@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BlogList from './components/BlogList';
+import BlogDetail from './components/BlogDetail';
+import BlogForm from './components/BlogForm';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
+  const [refreshPosts, setRefreshPosts] = useState(false);
+
+  const handlePostCreated = () => {
+    setRefreshPosts(!refreshPosts);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<BlogList refresh={refreshPosts} />} />
+            <Route path="/posts/:id" element={<BlogDetail />} />
+            <Route path="/new-post" element={<BlogForm onPostCreated={handlePostCreated} />} />
+          </Routes>
+        </main>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
 
