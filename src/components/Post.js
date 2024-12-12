@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { fetchPosts } from './api'; // Import the API function
-import BlogCard from './BlogCard';
-import './CardStyle.css';
+import axios from 'axios';
+import PostCard from './PostCard';
+import Navbar from './Navbar'
+import './Post.css';
 
-function BlogList() {
+function Post() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetchPosts()
+    axios.get('https://the-alteroffice-server-w8ou.onrender.com/posts')
       .then(response => setPosts(response.data.posts))
       .catch(error => console.error('Error fetching posts:', error));
   }, []);
 
   return (
+
     <div>
-      <h2 style={{color:"#d95d3f"}}>Blog Posts</h2>
+      <Navbar/>
       <div className="blog-list">
         {posts.map(post => (
-          <BlogCard
+          <PostCard
             key={post.id}
             title={post.title}
-            content={post.content.substring(0, 100)} 
-            imageUrl={post.image_url} 
+            Description={post.Description?.substring(0, 500)} 
+            imageUrl={post.image_url}
+            videoUrl = {post.videourl}
             link={`/posts/${post.id}`}
+            date={post.date}
           />
         ))}
       </div>
@@ -30,4 +34,4 @@ function BlogList() {
   );
 }
 
-export default BlogList;
+export default Post;

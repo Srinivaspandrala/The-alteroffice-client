@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(0, 0, 0);
+  background-color: #0c0c0c;
+  opacity: 1;
   color: aliceblue;
 
 }
@@ -17,16 +18,16 @@ code {
 .form-container {
   max-width: 500px;
   padding: 20px;
-  background-color: #020202; /* Light grey background */
+  background-color: #020202; 
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(207, 198, 198, 0.1);
-  margin: 0 auto; /* Center the form container */
+  box-shadow: 0 0 10px #cfc6c61a;
+  margin: 0 auto; 
   border:solid 1px #5e5c5c;
 }
 
 .form-container h2 {
   text-align: center;
-  color: #d95d3f; /* Primary color for headers */
+  color: #02befe; 
   margin-bottom: 20px;
 }
 
@@ -37,6 +38,7 @@ code {
 }
 
 .form-container input[type="text"],
+.form-container [type="date"],
 .form-container textarea {
   width: 90%;
   padding: 10px;
@@ -45,13 +47,14 @@ code {
   border-radius: 5px;
   background-color: #020202; /* White background for input fields */
   font-size: 16px;
-  color: #333;
+  color: #f0e8e8;
 }
 
 .form-container input[type="text"]:focus,
 .form-container textarea:focus {
   border-color: #d95d3f; /* Focus border color */
   outline: none;
+  color: ;
 }
 
 .form-container button {

@@ -5,20 +5,22 @@
     padding: 20px;
     background-color: #fff; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px #f1eeee1a; 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
   }
   
   .card-container:hover {
     transform: translateY(-5px); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    transform: scale(1.1);
   }
   
   .card-header {
     font-size: 24px;
-    color: #d95d3f; 
+    color:#6c63ff; 
     margin-bottom: 10px;
     text-align: center;
+    font-weight: bold;
   }
   
   .card-image {
@@ -30,8 +32,9 @@
   
   .card-content {
     font-size: 16px;
-    color: #333; 
+    color: #050505; 
     margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
   
   .card-footer {
@@ -40,30 +43,14 @@
     align-items: center;
   }
   
-  .card-footer .button {
-    padding: 10px 20px;
-    background-color: #d95d3f; 
-    color: #fff; 
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .card-footer .button:hover {
-    background-color: #c04b32; 
-  }
-  
-  .card-footer .link {
-    color: #d95d3f; 
-    text-decoration: none;
+  .card-date{
+    color:#02befe;
     font-weight: bold;
+    padding: 10px;
   }
-  
-  .card-footer .link:hover {
-    text-decoration: underline;
+  .card-like{
+
   }
-  
+  .card-like:hover{
+    background-color: #fe3d02;
+  }

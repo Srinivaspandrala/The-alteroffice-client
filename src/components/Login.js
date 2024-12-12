@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import './Login.css'
+
+const Login = ({ setIsLoggedIn }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    if (!email || !password) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    try {
+      const response = await axios.post('https://the-alteroffice-server-w8ou.onrender.com/login', {
+        email,
+        password,
+      });
+
+      if (response.data.success) {
+        alert('Login successful!');
+        setIsLoggedIn(true); 
+        navigate('/'); 
+      } else {
+        alert('Invalid credentials.');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('Error occurred during login.');
+    }
+  };
+
+  return (
+    <div className='login'>
+    <div className="login-container">
+      <h2>Login</h2>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleLogin}>Login</button>
+      <p className='register-account'>        Don't have an account? <Link to="/register" className='a-link'>Register here</Link>
+      </p>
+    </div>
+  
+    </div>
+  );
+};
+
+export default Login;

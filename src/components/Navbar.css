@@ -1,9 +1,11 @@
 .Navbar {
-    padding: 5px;
+    padding:25px;
     font-weight: bold;
     font-size: larger;
-    background-color: rgb(3, 3, 3);
+    background-color: #0f0f0f;
     opacity: 0.6;
+    position: sticky;
+    top: 0;
 
 }
 
@@ -12,6 +14,7 @@
     margin: 0px;
     padding: 0px;
     list-style-type: none;
+
 }
 
 .Navbar li {
@@ -19,11 +22,8 @@
 }
 
 .Navbar a {
-    color: aliceblue;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 18px;
-}
-.Navbar li:hover{
-   color: #d95d3f;
-   cursor: pointer;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
 }

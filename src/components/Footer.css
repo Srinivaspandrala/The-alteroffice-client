@@ -1,12 +1,13 @@
 .footer {
-    background-color: #0a0808;
-    color: #fff;
-    padding: 20px 1px;
+    background-color: #181818;
+    color: #4d4a4a;
+    padding: 8px 1px;
     text-align: center;
     position: relative;
     left: 0;
     bottom: 0;
-    width: 80%;
+    width: 100%;
+    margin: 10% 0% 0% 0%;
   }
   
   .footer-content {
@@ -26,7 +27,8 @@
   }
   
   .social-media-img:hover {
-    width: 60px;
-    cursor: pointer;
+    width: 40px;
+    transform: translateY(-5px); 
+
   }
   
